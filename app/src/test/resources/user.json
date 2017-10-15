@@ -1,0 +1,45 @@
+{
+  "_id": "59dbe0264a405e530c7f15c3",
+  "index": 2,
+  "guid": "64b266f3-8af4-469d-a78c-c263852e2379",
+  "isActive": false,
+  "balance": "$2,287.14",
+  "picture": "http://placehold.it/32x32",
+  "age": 26,
+  "eyeColor": "blue",
+  "name": "Jacobson Mclaughlin",
+  "gender": "male",
+  "company": "LUXURIA",
+  "email": "jacobsonmclaughlin@luxuria.com",
+  "phone": "+1 (803) 436-3542",
+  "address": "351 Elton Street, Cornfields, Washington, 1473",
+  "about": "Cupidatat in non Lorem nostrud pariatur non incididunt esse deserunt reprehenderit minim consequat sit sit. Aliquip reprehenderit incididunt laborum exercitation eu laboris. Labore esse veniam commodo non dolore veniam in veniam exercitation deserunt culpa cupidatat nulla. Fugiat amet culpa sit pariatur ipsum ullamco. Velit consequat laboris anim ut ea elit duis qui. Est veniam commodo cillum nulla nostrud tempor veniam dolore.\r\n",
+  "registered": 1507282371121,
+  "latitude": 20.816449,
+  "longitude": 151.783492,
+  "tags": [
+    "pariatur",
+    "et",
+    "irure",
+    "ad",
+    "et",
+    "laborum",
+    "enim"
+  ],
+  "friends": [
+    {
+      "id": 0,
+      "name": "Alissa Goodman"
+    },
+    {
+      "id": 1,
+      "name": "Rosanna Aguirre"
+    },
+    {
+      "id": 2,
+      "name": "Virgie Castro"
+    }
+  ],
+  "greeting": "Hello, Jacobson Mclaughlin! You have 7 unread messages.",
+  "favoriteFruit": "banana"
+}
