@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-
 public class UserJson implements IUser {
 
     private static final String ID = "_id";
@@ -25,9 +24,9 @@ public class UserJson implements IUser {
     private static final String REGISTERED = "registered";
     private static final String TAGS = "tags";
     private static final String FRIENDS = "friends";
-    JSONObject mJSONObject;
+    private final JSONObject mJSONObject;
 
-    public UserJson(JSONObject pJSONObject) {
+    public UserJson(final JSONObject pJSONObject) {
         mJSONObject = pJSONObject;
     }
 
@@ -83,8 +82,8 @@ public class UserJson implements IUser {
 
     @Override
     public List<String> getTags() {
-        JSONArray jsonArray = mJSONObject.optJSONArray(TAGS);
-        List<String> tags = new LinkedList<>();
+        final JSONArray jsonArray = mJSONObject.optJSONArray(TAGS);
+        final List<String> tags = new LinkedList<>();
         for (int i = 0; i < jsonArray.length(); i++) {
             tags.add(jsonArray.optString(i));
         }
@@ -93,9 +92,9 @@ public class UserJson implements IUser {
 
     @Override
     public List<IFriend> getFriends() {
-        JSONArray jsonArray = mJSONObject.optJSONArray(FRIENDS);
-        List<IFriend> friends = new LinkedList<>();
-        for (int i = 0; i<jsonArray.length();i++) {
+        final JSONArray jsonArray = mJSONObject.optJSONArray(FRIENDS);
+        final List<IFriend> friends = new LinkedList<>();
+        for (int i = 0; i < jsonArray.length(); i++) {
             friends.add(new FriendJson(jsonArray.optJSONObject(i)));
         }
         return friends;

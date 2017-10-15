@@ -12,7 +12,7 @@ import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.io.OutputStream;
 
-public class IOUtils {
+public final class IOUtils {
 
     public static void close(Closeable closeable) {
         if (closeable != null) {

@@ -6,15 +6,13 @@ import com.google.gson.Gson;
 
 import org.json.JSONException;
 
-public class UserGsonParser implements IUserParser {
+class UserGsonParser implements IUserParser {
 
-    String mSource;
+    private final String mSource;
 
-    public UserGsonParser(String pSource) {
+    public UserGsonParser(final String pSource) {
         mSource = pSource;
     }
-
-
 
     @Override
     public IUser parse() throws JSONException {

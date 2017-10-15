@@ -3,11 +3,15 @@ package com.github.rakickayakaterina.jsonparsing.parsers.models.gson;
 import com.github.rakickayakaterina.jsonparsing.parsers.models.IFriend;
 import com.google.gson.annotations.SerializedName;
 
-public class FriendGson implements IFriend {
+class FriendGson implements IFriend {
+
     @SerializedName("id")
-    int mId;
+    private int mId;
     @SerializedName("name")
-    String mName;
+    private String mName;
+
+    FriendGson() {
+    }
 
     @Override
     public int getId() {

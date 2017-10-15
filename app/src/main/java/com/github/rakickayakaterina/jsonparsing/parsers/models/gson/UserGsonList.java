@@ -7,9 +7,9 @@ import java.util.List;
 
 public class UserGsonList implements IListUser {
 
-    List<IUser> mUserList;
+    private List<IUser> mUserList;
 
-    public UserGsonList(List<IUser> pUserList) {
+    public UserGsonList(final List<IUser> pUserList) {
         mUserList = pUserList;
     }
 

@@ -25,32 +25,29 @@ public class UserGson implements IUser {
     private static final String FRIENDS = "friends";
 
     @SerializedName(ID)
-    String mId;
+    private String mId;
     @SerializedName(INDEX)
-    int mIndex;
+    private int mIndex;
     @SerializedName(GUID)
-    String mGuid;
+    private String mGuid;
     @SerializedName(IS_ACTIVE)
-    boolean mIsActive;
+    private boolean mIsActive;
     @SerializedName(BALANCE)
-    String mBalance;
+    private String mBalance;
     @SerializedName(PICTURE)
-    String mPicture;
+    private String mPicture;
     @SerializedName(AGE)
-    int mAge;
+    private int mAge;
     @SerializedName(NAME)
-    String mName;
+    private String mName;
     @SerializedName(GENDER)
-    String mGender;
+    private String mGender;
     @SerializedName(REGISTERED)
-    long mRegistered;
+    private long mRegistered;
     @SerializedName(TAGS)
-    String[] mTags;
+    private String[] mTags;
     @SerializedName(FRIENDS)
-    FriendGson[] mFriends;
-
-
-
+    private FriendGson[] mFriends;
 
     @Override
     public String getId() {
@@ -111,7 +108,7 @@ public class UserGson implements IUser {
     @Override
     public List<IFriend> getFriends() {
         List<IFriend> friendList = new LinkedList<>();
-        for (int i=0;i<mFriends.length;i++){
+        for (int i = 0; i < mFriends.length; i++) {
             friendList.add(mFriends[i]);
         }
         return friendList;

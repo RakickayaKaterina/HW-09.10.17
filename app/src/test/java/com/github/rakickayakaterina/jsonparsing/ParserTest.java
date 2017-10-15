@@ -31,14 +31,14 @@ import static org.mockito.Mockito.when;
 )
 public class ParserTest {
 
-    public static final String USER_JSON = "user.json";
-    public static final String USERS_LIST_JSON = "usersList.json";
-    public static final String HTTP_LOCALHOST_USER = "http://localhost/user";
-    public static final String HTTP_LOCALHOST_LIST_USER = "http://localhost/listUser";
+    private static final String USER_JSON = "user.json";
+    private static final String USERS_LIST_JSON = "usersList.json";
+    private static final String HTTP_LOCALHOST_USER = "http://localhost/user";
+    private static final String HTTP_LOCALHOST_LIST_USER = "http://localhost/listUser";
 
-    InputStream httpUserStream;
-    InputStream httpListUserStream;
-    IHttpClient mHttpClient = mock(IHttpClient.class);
+    private InputStream httpUserStream;
+    private InputStream httpListUserStream;
+    private IHttpClient mHttpClient = mock(IHttpClient.class);
 
     @Before
     public void init() {
@@ -52,8 +52,8 @@ public class ParserTest {
     @Test
     public void userJsonTest() throws IOException, JSONException {
 
-        IUserParser userJsonParser = ParserFactory.createUserParser(ParserFactory.JSON, IOUtils.toString(mHttpClient.request(HTTP_LOCALHOST_USER)));
-        IUser user = userJsonParser.parse();
+        final IUserParser userJsonParser = ParserFactory.createUserParser(ParserFactory.JSON, IOUtils.toString(mHttpClient.request(HTTP_LOCALHOST_USER)));
+        final IUser user = userJsonParser.parse();
         assertEquals("Jacobson Mclaughlin", user.getName());
         assertEquals(26, user.getAge());
         assertEquals("Alissa Goodman", user.getFriends().get(0).getName());
@@ -62,8 +62,8 @@ public class ParserTest {
     @Test
     public void userGsonTest() throws IOException, JSONException {
 
-        IUserParser userGsonParser = ParserFactory.createUserParser(ParserFactory.GSON, IOUtils.toString(mHttpClient.request(HTTP_LOCALHOST_USER)));
-        IUser user = userGsonParser.parse();
+        final IUserParser userGsonParser = ParserFactory.createUserParser(ParserFactory.GSON, IOUtils.toString(mHttpClient.request(HTTP_LOCALHOST_USER)));
+        final IUser user = userGsonParser.parse();
         assertEquals("Jacobson Mclaughlin", user.getName());
         assertEquals(26, user.getAge());
         assertEquals("Alissa Goodman", user.getFriends().get(0).getName());
@@ -71,16 +71,16 @@ public class ParserTest {
 
     @Test
     public void listUserJsonParser() throws IOException, JSONException {
-        IListUserParser listUserJsonParser = ParserFactory.createListUserParser(ParserFactory.JSON, IOUtils.toString(mHttpClient.request(HTTP_LOCALHOST_LIST_USER)));
-        IListUser listUser = listUserJsonParser.parse();
+        final IListUserParser listUserJsonParser = ParserFactory.createListUserParser(ParserFactory.JSON, IOUtils.toString(mHttpClient.request(HTTP_LOCALHOST_LIST_USER)));
+        final IListUser listUser = listUserJsonParser.parse();
         assertEquals(5, listUser.getListUser().size());
 
     }
 
     @Test
     public void listUserGsonParser() throws IOException, JSONException {
-        IListUserParser listUserGsonParser = ParserFactory.createListUserParser(ParserFactory.GSON, IOUtils.toString(mHttpClient.request(HTTP_LOCALHOST_LIST_USER)));
-        IListUser listUser = listUserGsonParser.parse();
+        final IListUserParser listUserGsonParser = ParserFactory.createListUserParser(ParserFactory.GSON, IOUtils.toString(mHttpClient.request(HTTP_LOCALHOST_LIST_USER)));
+        final IListUser listUser = listUserGsonParser.parse();
         assertEquals(5, listUser.getListUser().size());
 
     }
@@ -91,7 +91,7 @@ public class ParserTest {
         try {
             httpUserStream.close();
             httpListUserStream.close();
-        } catch (IOException pE) {
+        } catch (final IOException pE) {
             pE.printStackTrace();
         }
     }
