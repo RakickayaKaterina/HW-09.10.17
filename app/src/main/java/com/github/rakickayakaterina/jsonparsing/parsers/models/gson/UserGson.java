@@ -43,7 +43,7 @@ public class UserGson implements IUser {
     @SerializedName(GENDER)
     private String mGender;
     @SerializedName(REGISTERED)
-    private long mRegistered;
+    private Date mRegistered;
     @SerializedName(TAGS)
     private String[] mTags;
     @SerializedName(FRIENDS)
@@ -97,7 +97,7 @@ public class UserGson implements IUser {
     @Override
     public Date getRegistered() {
 
-        return new Date(mRegistered);
+        return mRegistered;
     }
 
     @Override

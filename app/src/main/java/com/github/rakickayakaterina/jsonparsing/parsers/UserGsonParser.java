@@ -3,8 +3,11 @@ package com.github.rakickayakaterina.jsonparsing.parsers;
 import com.github.rakickayakaterina.jsonparsing.parsers.models.IUser;
 import com.github.rakickayakaterina.jsonparsing.parsers.models.gson.UserGson;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
+
+import java.util.Date;
 
 class UserGsonParser implements IUserParser {
 
@@ -16,6 +19,7 @@ class UserGsonParser implements IUserParser {
 
     @Override
     public IUser parse() throws JSONException {
-        return new Gson().fromJson(mSource, UserGson.class);
+        Gson gson = new GsonBuilder().registerTypeAdapter(Date.class,new TypeAdapter()).create();
+        return gson.fromJson(mSource, UserGson.class);
     }
 }
